@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gene.joystreet.dao.SeckillgoodsMapper">
+  <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Seckillgoods">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
+    <result column="item_id" jdbcType="BIGINT" property="itemId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="small_pic" jdbcType="VARCHAR" property="smallPic" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="cost_price" jdbcType="DECIMAL" property="costPrice" />
+    <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="check_time" jdbcType="TIMESTAMP" property="checkTime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="stock_count" jdbcType="INTEGER" property="stockCount" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tb_seckill_goods
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.gene.joystreet.entity.Seckillgoods">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_seckill_goods (id, goods_id, item_id, 
+      title, small_pic, price, 
+      cost_price, seller_id, create_time, 
+      check_time, status, start_time, 
+      end_time, num, stock_count, 
+      introduction)
+    values (#{id,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, #{itemId,jdbcType=BIGINT}, 
+      #{title,jdbcType=VARCHAR}, #{smallPic,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{costPrice,jdbcType=DECIMAL}, #{sellerId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{checkTime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{num,jdbcType=INTEGER}, #{stockCount,jdbcType=INTEGER}, 
+      #{introduction,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.gene.joystreet.entity.Seckillgoods">
+    update tb_seckill_goods
+    set goods_id = #{goodsId,jdbcType=BIGINT},
+      item_id = #{itemId,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      small_pic = #{smallPic,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      cost_price = #{costPrice,jdbcType=DECIMAL},
+      seller_id = #{sellerId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      check_time = #{checkTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      num = #{num,jdbcType=INTEGER},
+      stock_count = #{stockCount,jdbcType=INTEGER},
+      introduction = #{introduction,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, goods_id, item_id, title, small_pic, price, cost_price, seller_id, create_time, 
+    check_time, status, start_time, end_time, num, stock_count, introduction
+    from tb_seckill_goods
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, goods_id, item_id, title, small_pic, price, cost_price, seller_id, create_time, 
+    check_time, status, start_time, end_time, num, stock_count, introduction
+    from tb_seckill_goods
+  </select>
+</mapper>

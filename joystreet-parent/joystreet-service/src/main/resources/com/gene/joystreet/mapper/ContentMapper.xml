@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gene.joystreet.dao.ContentMapper">
+  <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Content">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="sort_order" jdbcType="INTEGER" property="sortOrder" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tb_content
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.gene.joystreet.entity.Content">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_content (id, category_id, title, 
+      url, pic, status, sort_order
+      )
+    values (#{id,jdbcType=BIGINT}, #{categoryId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{sortOrder,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.gene.joystreet.entity.Content">
+    update tb_content
+    set category_id = #{categoryId,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      pic = #{pic,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      sort_order = #{sortOrder,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, category_id, title, url, pic, status, sort_order
+    from tb_content
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, category_id, title, url, pic, status, sort_order
+    from tb_content
+  </select>
+</mapper>

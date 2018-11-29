@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.2.xsd
+            http://code.alibabatech.com/schema/dubbo
+            http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+            
+    <!-- 配置要扫描的包 -->
+    <context:component-scan base-package="com.gene.joystreet.brand.service.impl"/>
+	
+    <!--提供方应用信息 -->
+    <dubbo:application name="joystreet-seller-provider"/>
+    
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry protocol="zookeeper" address="${zookeeper.address}"/>
+    
+    <!-- 用dubbo协议定义暴露的port -->
+    <dubbo:protocol name="dubbo" port="${dubbo.port}"/>
+
+    <!-- 地址接口  -->
+    <dubbo:service
+            interface="com.gene.joystreet.brand.service.IBrandService"
+            ref="brandServiceImpl" timeout="${zookeeper.timeout}"
+            version="${zookeeper.version}"></dubbo:service>
+
+</beans>
