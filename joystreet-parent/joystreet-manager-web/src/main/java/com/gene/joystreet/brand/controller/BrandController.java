@@ -11,16 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.gene.joystreet.brand.service.IBrandService;
 
 /**
- * 
- * Copyright: Copyright (c) 2018 GeneLi0412
- * 
- * @ClassName: BrandController.java
- * @Description: 品牌控制层
- *
+ * 品牌相关
  * @author: LJP
- * @date: 2018年11月29日 下午3:42:00
+ * @date: 2018年11月30日 下午3:59:14
  */
-
 @Controller
 @RequestMapping("brand")
 public class BrandController {
