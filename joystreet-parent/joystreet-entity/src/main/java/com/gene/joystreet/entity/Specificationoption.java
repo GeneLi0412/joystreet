@@ -1,12 +1,7 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
-
-public class Specificationoption implements Serializable{
-
-	private static final long serialVersionUID = 3414379722030405086L;
-
-	private Long id;
+public class Specificationoption {
+    private String id;
 
     private String optionName;
 
@@ -14,12 +9,12 @@ public class Specificationoption implements Serializable{
 
     private Integer orders;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getOptionName() {

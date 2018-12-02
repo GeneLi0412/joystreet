@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Item;
 import java.util.List;
 
 public interface ItemMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Item record);
 
-    Item selectByPrimaryKey(Long id);
+    Item selectByPrimaryKey(String id);
 
     List<Item> selectAll();
 

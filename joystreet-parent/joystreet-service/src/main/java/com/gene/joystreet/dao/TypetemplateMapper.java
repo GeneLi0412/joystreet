@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Typetemplate;
 import java.util.List;
 
 public interface TypetemplateMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Typetemplate record);
 
-    Typetemplate selectByPrimaryKey(Long id);
+    Typetemplate selectByPrimaryKey(String id);
 
     List<Typetemplate> selectAll();
 

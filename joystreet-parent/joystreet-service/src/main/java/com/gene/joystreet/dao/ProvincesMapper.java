@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Provinces;
 import java.util.List;
 
 public interface ProvincesMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Provinces record);
 
-    Provinces selectByPrimaryKey(Integer id);
+    Provinces selectByPrimaryKey(String id);
 
     List<Provinces> selectAll();
 

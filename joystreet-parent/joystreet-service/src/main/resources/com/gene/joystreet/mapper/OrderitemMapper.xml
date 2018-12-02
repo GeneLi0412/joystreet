@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gene.joystreet.dao.OrderitemMapper">
   <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Orderitem">
-    <id column="id" jdbcType="BIGINT" property="id" />
+    <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="item_id" jdbcType="BIGINT" property="itemId" />
     <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
     <result column="order_id" jdbcType="BIGINT" property="orderId" />
@@ -13,19 +13,16 @@
     <result column="pic_path" jdbcType="VARCHAR" property="picPath" />
     <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tb_order_item
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.gene.joystreet.entity.Orderitem">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into tb_order_item (id, item_id, goods_id, 
       order_id, title, price, 
       num, total_fee, pic_path, 
       seller_id)
-    values (#{id,jdbcType=BIGINT}, #{itemId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=VARCHAR}, #{itemId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, 
       #{orderId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
       #{num,jdbcType=INTEGER}, #{totalFee,jdbcType=DECIMAL}, #{picPath,jdbcType=VARCHAR}, 
       #{sellerId,jdbcType=VARCHAR})
@@ -41,12 +38,12 @@
       total_fee = #{totalFee,jdbcType=DECIMAL},
       pic_path = #{picPath,jdbcType=VARCHAR},
       seller_id = #{sellerId,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select id, item_id, goods_id, order_id, title, price, num, total_fee, pic_path, seller_id
     from tb_order_item
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
     select id, item_id, goods_id, order_id, title, price, num, total_fee, pic_path, seller_id

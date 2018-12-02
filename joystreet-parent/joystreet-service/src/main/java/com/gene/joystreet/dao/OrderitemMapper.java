@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Orderitem;
 import java.util.List;
 
 public interface OrderitemMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Orderitem record);
 
-    Orderitem selectByPrimaryKey(Long id);
+    Orderitem selectByPrimaryKey(String id);
 
     List<Orderitem> selectAll();
 

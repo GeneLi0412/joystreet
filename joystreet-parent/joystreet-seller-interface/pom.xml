@@ -14,6 +14,11 @@
 	    <artifactId>joystreet-entity</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+	    <groupId>com.gene.joystreet</groupId>
+  	  	<artifactId>joystreet-common</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
 </dependencies>
   
 </project>

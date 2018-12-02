@@ -1,12 +1,7 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
-
-public class Cities implements Serializable{
-
-	private static final long serialVersionUID = -7040896700262196315L;
-
-	private Integer id;
+public class Cities {
+    private String id;
 
     private String cityid;
 
@@ -14,12 +9,12 @@ public class Cities implements Serializable{
 
     private String provinceid;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getCityid() {

@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Specification;
 import java.util.List;
 
 public interface SpecificationMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Specification record);
 
-    Specification selectByPrimaryKey(Long id);
+    Specification selectByPrimaryKey(String id);
 
     List<Specification> selectAll();
 

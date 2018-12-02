@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gene.joystreet.dao.SeckillorderMapper">
   <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Seckillorder">
-    <id column="id" jdbcType="BIGINT" property="id" />
+    <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="seckill_id" jdbcType="BIGINT" property="seckillId" />
     <result column="money" jdbcType="DECIMAL" property="money" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
@@ -15,20 +15,17 @@
     <result column="receiver" jdbcType="VARCHAR" property="receiver" />
     <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tb_seckill_order
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.gene.joystreet.entity.Seckillorder">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into tb_seckill_order (id, seckill_id, money, 
       user_id, seller_id, create_time, 
       pay_time, status, receiver_address, 
       receiver_mobile, receiver, transaction_id
       )
-    values (#{id,jdbcType=BIGINT}, #{seckillId,jdbcType=BIGINT}, #{money,jdbcType=DECIMAL}, 
+    values (#{id,jdbcType=VARCHAR}, #{seckillId,jdbcType=BIGINT}, #{money,jdbcType=DECIMAL}, 
       #{userId,jdbcType=VARCHAR}, #{sellerId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{payTime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, #{receiverAddress,jdbcType=VARCHAR}, 
       #{receiverMobile,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, #{transactionId,jdbcType=VARCHAR}
@@ -47,13 +44,13 @@
       receiver_mobile = #{receiverMobile,jdbcType=VARCHAR},
       receiver = #{receiver,jdbcType=VARCHAR},
       transaction_id = #{transactionId,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select id, seckill_id, money, user_id, seller_id, create_time, pay_time, status, 
     receiver_address, receiver_mobile, receiver, transaction_id
     from tb_seckill_order
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
     select id, seckill_id, money, user_id, seller_id, create_time, pay_time, status, 

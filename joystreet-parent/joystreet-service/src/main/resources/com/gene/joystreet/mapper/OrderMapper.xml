@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gene.joystreet.dao.OrderMapper">
   <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Order">
-    <id column="order_id" jdbcType="BIGINT" property="orderId" />
+    <id column="order_id" jdbcType="VARCHAR" property="orderId" />
     <result column="payment" jdbcType="DECIMAL" property="payment" />
     <result column="payment_type" jdbcType="VARCHAR" property="paymentType" />
     <result column="post_fee" jdbcType="VARCHAR" property="postFee" />
@@ -28,9 +28,9 @@
     <result column="source_type" jdbcType="VARCHAR" property="sourceType" />
     <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tb_order
-    where order_id = #{orderId,jdbcType=BIGINT}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.gene.joystreet.entity.Order">
     insert into tb_order (order_id, payment, payment_type, 
@@ -42,7 +42,7 @@
       receiver_mobile, receiver_zip_code, receiver, 
       expire, invoice_type, source_type, 
       seller_id)
-    values (#{orderId,jdbcType=BIGINT}, #{payment,jdbcType=DECIMAL}, #{paymentType,jdbcType=VARCHAR}, 
+    values (#{orderId,jdbcType=VARCHAR}, #{payment,jdbcType=DECIMAL}, #{paymentType,jdbcType=VARCHAR}, 
       #{postFee,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{paymentTime,jdbcType=TIMESTAMP}, #{consignTime,jdbcType=TIMESTAMP}, 
       #{endTime,jdbcType=TIMESTAMP}, #{closeTime,jdbcType=TIMESTAMP}, #{shippingName,jdbcType=VARCHAR}, 
@@ -78,15 +78,15 @@
       invoice_type = #{invoiceType,jdbcType=VARCHAR},
       source_type = #{sourceType,jdbcType=VARCHAR},
       seller_id = #{sellerId,jdbcType=VARCHAR}
-    where order_id = #{orderId,jdbcType=BIGINT}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select order_id, payment, payment_type, post_fee, status, create_time, update_time, 
     payment_time, consign_time, end_time, close_time, shipping_name, shipping_code, user_id, 
     buyer_message, buyer_nick, buyer_rate, receiver_area_name, receiver_mobile, receiver_zip_code, 
     receiver, expire, invoice_type, source_type, seller_id
     from tb_order
-    where order_id = #{orderId,jdbcType=BIGINT}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
     select order_id, payment, payment_type, post_fee, status, create_time, update_time, 

@@ -45,4 +45,12 @@
 		<!-- 指定要自动扫描接口的基础包，实现接口 -->
 		<property name="basePackage" value="com.gene.joystreet.dao"></property>
 	</bean>
+	
+	<!-- 事务管理器  -->  
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="dataSource" />  
+    </bean>  
+      
+    <!-- 开启事务控制的注解支持 -->  
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

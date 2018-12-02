@@ -1,13 +1,9 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Seller implements Serializable{
-
-	private static final long serialVersionUID = 7925225964035693805L;
-
-	private String sellerId;
+public class Seller {
+    private String sellerId;
 
     private String name;
 

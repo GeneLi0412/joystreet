@@ -1,14 +1,10 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Item implements Serializable{
-
-	private static final long serialVersionUID = -1249732237174107752L;
-
-	private Long id;
+public class Item {
+    private String id;
 
     private String title;
 
@@ -54,12 +50,12 @@ public class Item implements Serializable{
 
     private String seller;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getTitle() {

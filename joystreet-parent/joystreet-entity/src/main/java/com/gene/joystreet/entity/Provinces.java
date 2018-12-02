@@ -1,23 +1,18 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
-
-public class Provinces implements Serializable{
-
-	private static final long serialVersionUID = -6198779104118701235L;
-
-	private Integer id;
+public class Provinces {
+    private String id;
 
     private String provinceid;
 
     private String province;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getProvinceid() {

@@ -1,13 +1,9 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Freighttemplate implements Serializable{
-
-	private static final long serialVersionUID = -548978638679087785L;
-
-	private Long id;
+public class Freighttemplate {
+    private String id;
 
     private String sellerId;
 
@@ -21,12 +17,12 @@ public class Freighttemplate implements Serializable{
 
     private Date createTime;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getSellerId() {

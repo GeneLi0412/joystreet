@@ -1,13 +1,9 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable{
-
-	private static final long serialVersionUID = 8319858601554632227L;
-
-	private Long id;
+public class User {
+    private String id;
 
     private String username;
 
@@ -51,12 +47,12 @@ public class User implements Serializable{
 
     private Date lastLoginTime;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getUsername() {

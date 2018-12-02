@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Areas;
 import java.util.List;
 
 public interface AreasMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Areas record);
 
-    Areas selectByPrimaryKey(Integer id);
+    Areas selectByPrimaryKey(String id);
 
     List<Areas> selectAll();
 

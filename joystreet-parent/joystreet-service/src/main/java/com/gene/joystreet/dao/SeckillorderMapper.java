@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Seckillorder;
 import java.util.List;
 
 public interface SeckillorderMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Seckillorder record);
 
-    Seckillorder selectByPrimaryKey(Long id);
+    Seckillorder selectByPrimaryKey(String id);
 
     List<Seckillorder> selectAll();
 

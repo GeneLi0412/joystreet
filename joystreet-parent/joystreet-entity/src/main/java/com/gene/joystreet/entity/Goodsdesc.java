@@ -1,12 +1,7 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
-
-public class Goodsdesc implements Serializable{
-
-	private static final long serialVersionUID = -2342921723457352823L;
-
-	private Long goodsId;
+public class Goodsdesc {
+    private String goodsId;
 
     private String introduction;
 
@@ -20,12 +15,12 @@ public class Goodsdesc implements Serializable{
 
     private String saleService;
 
-    public Long getGoodsId() {
+    public String getGoodsId() {
         return goodsId;
     }
 
-    public void setGoodsId(Long goodsId) {
-        this.goodsId = goodsId;
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId == null ? null : goodsId.trim();
     }
 
     public String getIntroduction() {

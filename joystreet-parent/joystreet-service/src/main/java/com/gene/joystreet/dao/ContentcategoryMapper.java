@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Contentcategory;
 import java.util.List;
 
 public interface ContentcategoryMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Contentcategory record);
 
-    Contentcategory selectByPrimaryKey(Long id);
+    Contentcategory selectByPrimaryKey(String id);
 
     List<Contentcategory> selectAll();
 

@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Specificationoption;
 import java.util.List;
 
 public interface SpecificationoptionMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Specificationoption record);
 
-    Specificationoption selectByPrimaryKey(Long id);
+    Specificationoption selectByPrimaryKey(String id);
 
     List<Specificationoption> selectAll();
 

@@ -1,13 +1,9 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Paylog implements Serializable{
-
-	private static final long serialVersionUID = 4957605852051124556L;
-
-	private String outTradeNo;
+public class Paylog {
+    private String outTradeNo;
 
     private Date createTime;
 

@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Goodsdesc;
 import java.util.List;
 
 public interface GoodsdescMapper {
-    int deleteByPrimaryKey(Long goodsId);
+    int deleteByPrimaryKey(String goodsId);
 
     int insert(Goodsdesc record);
 
-    Goodsdesc selectByPrimaryKey(Long goodsId);
+    Goodsdesc selectByPrimaryKey(String goodsId);
 
     List<Goodsdesc> selectAll();
 

@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Seckillgoods;
 import java.util.List;
 
 public interface SeckillgoodsMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Seckillgoods record);
 
-    Seckillgoods selectByPrimaryKey(Long id);
+    Seckillgoods selectByPrimaryKey(String id);
 
     List<Seckillgoods> selectAll();
 

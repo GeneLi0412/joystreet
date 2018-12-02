@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class Areas implements Serializable{
 
-	private static final long serialVersionUID = 1737051789673877350L;
+	private static final long serialVersionUID = -3880060347075573759L;
 
-	private Integer id;
+    private String id;
 
     private String areaid;
 
@@ -14,12 +14,12 @@ public class Areas implements Serializable{
 
     private String cityid;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getAreaid() {

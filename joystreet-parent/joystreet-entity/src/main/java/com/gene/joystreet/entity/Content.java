@@ -1,12 +1,7 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
-
-public class Content implements Serializable{
-
-	private static final long serialVersionUID = -8824361863913569558L;
-
-	private Long id;
+public class Content {
+    private String id;
 
     private Long categoryId;
 
@@ -20,12 +15,12 @@ public class Content implements Serializable{
 
     private Integer sortOrder;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public Long getCategoryId() {

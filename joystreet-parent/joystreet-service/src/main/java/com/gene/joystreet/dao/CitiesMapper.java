@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Cities;
 import java.util.List;
 
 public interface CitiesMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Cities record);
 
-    Cities selectByPrimaryKey(Integer id);
+    Cities selectByPrimaryKey(String id);
 
     List<Cities> selectAll();
 

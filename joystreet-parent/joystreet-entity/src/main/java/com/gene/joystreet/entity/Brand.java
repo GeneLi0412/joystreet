@@ -4,20 +4,20 @@ import java.io.Serializable;
 
 public class Brand implements Serializable{
 
-	private static final long serialVersionUID = -3422237576947217511L;
+	private static final long serialVersionUID = 8694282905688172576L;
 
-	private Long id;
+	private String id;
 
     private String name;
 
     private String firstChar;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getName() {

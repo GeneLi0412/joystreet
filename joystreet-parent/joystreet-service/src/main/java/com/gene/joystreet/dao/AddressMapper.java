@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Address;
 import java.util.List;
 
 public interface AddressMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Address record);
 
-    Address selectByPrimaryKey(Long id);
+    Address selectByPrimaryKey(String id);
 
     List<Address> selectAll();
 

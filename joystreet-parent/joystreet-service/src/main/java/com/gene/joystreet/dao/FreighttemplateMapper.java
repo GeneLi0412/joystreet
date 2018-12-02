@@ -4,11 +4,11 @@ import com.gene.joystreet.entity.Freighttemplate;
 import java.util.List;
 
 public interface FreighttemplateMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Freighttemplate record);
 
-    Freighttemplate selectByPrimaryKey(Long id);
+    Freighttemplate selectByPrimaryKey(String id);
 
     List<Freighttemplate> selectAll();
 
