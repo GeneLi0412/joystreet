@@ -1,11 +1,6 @@
 package com.gene.joystreet.entity;
 
-import java.io.Serializable;
-
-public class Areas implements Serializable{
-
-	private static final long serialVersionUID = -3880060347075573759L;
-
+public class Areas {
     private String id;
 
     private String areaid;

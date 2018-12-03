@@ -29,11 +29,11 @@
 		<div class="pull-left">
 			<div class="form-group form-inline">
 				<div class="btn-group">
-					<button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#editModal" ng-click="brand={}"><i class="fa fa-file-o"></i> 新建</button>
+					<button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#editModal"><i class="fa fa-file-o"></i> 新建</button>
 					<button type="button" class="btn btn-default" title="删除" ng-click="delete()"><i class="fa fa-trash-o"></i> 删除</button>
 					<button type="button" class="btn btn-default" title="刷新" ng-click="reloadList()"><i class="fa fa-refresh"></i> 刷新</button>
 				</div>
-				<input type="text" class="form-control" placeholder="搜索">
+				<input type="text" class="form-control" ng-model="searchtext" placeholder="搜索" ng-blur="reloadList()">
 			</div>
 		</div>
 		<!--工具栏/-->
@@ -42,7 +42,7 @@
 			<thead>
 			<tr>
 				<th class="" style="padding-right:0px">
-					<input id="selall" type="checkbox" class="icheckbox_square-blue" ng-click="selall($event)">
+					<input id="selall" type="checkbox" class="icheckbox_square-blue" ng-click="selall($event, 'brandId')">
 				</th>
 				<th class="sorting_asc">品牌ID</th>
 				<th class="sorting">品牌名称</th>
@@ -94,7 +94,7 @@
 </div>
 
 <!-- 引入script文件 -->
-<script src="../js/mine/global.js"></script>
-<script src="../js/mine/brand.js"></script>
+<script src="../js/mine/base.js"></script>
+<script src="../js/mine/brand_controller.js"></script>
 </body>
 </html>

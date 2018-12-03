@@ -1,7 +1,6 @@
 package com.gene.joystreet.brand.controller;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +26,7 @@ public class BrandController {
 
 	@Autowired
 	private IBrandService brandService;
-	
-	@RequestMapping("queryAllBrands")
-	@ResponseBody
-	public List<Brand> queryAllBands(){
-		return brandService.queryAllBrands();
- 	}
-	
+
 	/**
 	 * 分页查询品牌列表
 	 * @param page
@@ -42,8 +35,9 @@ public class BrandController {
 	 */
 	@RequestMapping("queryByPage")
 	@ResponseBody
-	public PageResult<Brand> queryByPage(@RequestParam(defaultValue="0") int page, @RequestParam(defaultValue="5") int rows){
-		return brandService.queryByPage(page, rows);
+	public PageResult<Brand> queryByPage(@RequestParam(defaultValue="1") Integer page, @RequestParam(defaultValue="5") Integer rows,
+			String search){
+		return brandService.queryByPage(page, rows, search);
 	}
 	
 	/**

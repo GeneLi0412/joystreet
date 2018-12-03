@@ -1,8 +1,5 @@
-/**
- * Created by 、Bonjour on 2018/12/1.
- */
 
-// 定义模块
+// 不需要分页
 var app = angular.module("joystreet",["pagination"]);
 
 // 绑定控制器
@@ -11,7 +8,7 @@ app.controller("brandController", function($scope, $http){
     // 重新加载列表
     $scope.reloadList = function(){
         // 切换页码
-        $scope.findByPage($scope.paginationConf.currentPage, $scope.paginationConf.itemsPerPage);
+        $scope.findByPage($scope.paginationConf.currentPage, $scope.paginationConf.itemsPerPage, $scope.searchtext);
     }
 
     // 分页控制配置
@@ -26,8 +23,19 @@ app.controller("brandController", function($scope, $http){
     };
 
     // 读取列表数据，绑定到表单当中
-    $scope.findByPage = function(page, rows){
-        $http.get(getRootPath()+"/brand/queryByPage?page="+ page +"&rows="+ rows).success(
+    $scope.findByPage = function(page, rows, search){
+        $http({
+            method: 'POST',
+            url: getRootPath()+"/brand/queryByPage",
+            data: $.param({
+                page: page,
+                rows: rows,
+                search: search
+            }),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            }
+        }).success(
             function(response){
                 $scope.list = response.rows;
                 $scope.paginationConf.totalItems = response.total;

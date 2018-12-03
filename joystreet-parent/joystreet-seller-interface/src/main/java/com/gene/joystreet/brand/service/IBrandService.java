@@ -1,6 +1,5 @@
 package com.gene.joystreet.brand.service;
 
-import java.util.List;
 import java.util.Map;
 
 import com.gene.joystreet.entity.Brand;
@@ -19,18 +18,12 @@ import com.gene.joystreet.util.PageResult;
 public interface IBrandService {
 	
 	/**
-	 * 查询所有品牌列表
-	 * @return
-	 */
-	public List<Brand> queryAllBrands();
-	
-	/**
 	 * 根据分页查找品牌
 	 * @param pageNo
 	 * @param pageSize
 	 * @return
 	 */
-	public PageResult<Brand> queryByPage(int pageNo, int pageSize);
+	public PageResult<Brand> queryByPage(int pageNo, int pageSize, String search);
 
 	/**
 	 * 添加品牌

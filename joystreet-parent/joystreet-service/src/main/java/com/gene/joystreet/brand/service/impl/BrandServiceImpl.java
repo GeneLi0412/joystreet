@@ -13,10 +13,12 @@ import com.gene.joystreet.brand.service.IBrandService;
 import com.gene.joystreet.common.SystemMessageConstant;
 import com.gene.joystreet.dao.BrandMapper;
 import com.gene.joystreet.entity.Brand;
+import com.gene.joystreet.entity.BrandExample;
 import com.gene.joystreet.util.IDUtils;
 import com.gene.joystreet.util.PageResult;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.StringUtil;
 
 @Service
 @Transactional
@@ -24,16 +26,20 @@ public class BrandServiceImpl implements IBrandService{
 
 	@Autowired
 	private BrandMapper brandMapper;
-	
-	@Override
-	public List<Brand> queryAllBrands() {
-		return brandMapper.selectAll();
-	}
 
 	@Override
-	public PageResult<Brand> queryByPage(int pageNo, int pageSize) {
+	public PageResult<Brand> queryByPage(int pageNo, int pageSize, String search) {
+		// 分页
 		PageHelper.startPage(pageNo, pageSize);
-		Page<Brand> page = (Page<Brand>) brandMapper.selectAll();
+		// 条件查询
+		BrandExample brandExample = new BrandExample();
+		if(StringUtil.isNotEmpty(search)) {
+			// 首字符
+			brandExample.or().andFirstCharLike("%"+ search +"%");
+			// 名字
+			brandExample.or().andNameLike("%"+ search +"%");
+		}
+		Page<Brand> page = (Page<Brand>) brandMapper.selectByExample(brandExample);
 		return new PageResult<>(page.getTotal(), page.getResult());
 	}
 
@@ -70,7 +76,9 @@ public class BrandServiceImpl implements IBrandService{
 	public Map<String, Object> deleteByIds(String[] ids) {
 		Map<String, Object> base = new HashMap<>();
 		List<String> idlist = Arrays.asList(ids);
-		brandMapper.deleteByPrimaryKeys(idlist);
+		BrandExample brandExample = new BrandExample();
+		brandExample.or().andIdIn(idlist);
+		brandMapper.deleteByExample(brandExample);
 		base.put("error", false);
 		base.put("message", SystemMessageConstant.OPERATION_SUCCESS);
 		return base;
