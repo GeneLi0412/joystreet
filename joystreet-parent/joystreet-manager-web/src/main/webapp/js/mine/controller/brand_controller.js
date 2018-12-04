@@ -1,35 +1,19 @@
 
-// 不需要分页
-var app = angular.module("joystreet",["pagination"]);
-
 // 绑定控制器
-app.controller("brandController", function($scope, $http){
+app.controller("brandController", function($scope, $controller, $http){
 
-    // 重新加载列表
-    $scope.reloadList = function(){
-        // 切换页码
-        $scope.findByPage($scope.paginationConf.currentPage, $scope.paginationConf.itemsPerPage, $scope.searchtext);
-    }
-
-    // 分页控制配置
-    $scope.paginationConf = {
-        currentPage:1,
-        itemsPerPage:10,
-        perPageOptions:[5,15,20,25,30],
-        onChange:function(){
-            $scope.reloadList();
-        }
-    };
+    // 引入基础控制层
+    $controller("baseController", {$scope:$scope});
 
     // 读取列表数据，绑定到表单当中
-    $scope.findByPage = function(page, rows, search){
+    $scope.queryByPage = function(page, rows, search){
         $http({
             method: 'POST',
             url: getRootPath()+"/brand/queryByPage",
             data: $.param({
                 page: page,
                 rows: rows,
-                search: search
+                search: search.text
             }),
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
@@ -48,11 +32,11 @@ app.controller("brandController", function($scope, $http){
         if($scope.brand.id != null){
             method = "/brand/updateBrand";
         }
-
         $http.post(getRootPath()+method, $scope.brand).success(
             function(response){
                 if(!response.error){
                     $scope.reloadList();
+                    $scope.brand = {};
                 }
             }
         );
@@ -68,41 +52,6 @@ app.controller("brandController", function($scope, $http){
             }
         );
     };
-
-    // 更新复选框列表
-    $scope.selectIds = [];
-    $scope.updateSelection = function (checked, id){
-        // 如果复选框为选中状态
-        if(checked){
-            $scope.selectIds.push(id);
-        }else{
-            // 获得ID在数组中的索引
-            var index = $scope.selectIds.indexOf(id);
-            if(index != -1){
-                // 剔除
-                $scope.selectIds.splice(index, 1);
-            }
-        }
-    };
-
-    // 选择所有
-    $scope.selall = function($event){
-        var bids = document.getElementsByName("brandId");
-        for(var i=0;i<bids.length;i++){
-            bids[i].checked = $event.target.checked;
-        }
-        if($event.target.checked){
-            var brands = $scope.list;
-            for(var j=0;j<brands.length;j++){
-                var ind = $scope.selectIds.indexOf(brands[j].id);
-                if(ind == -1){
-                    $scope.selectIds.push(brands[j].id);
-                }
-            }
-        }else{
-            $scope.selectIds = [];
-        }
-    }
 
     // 删除
     $scope.delete = function(){

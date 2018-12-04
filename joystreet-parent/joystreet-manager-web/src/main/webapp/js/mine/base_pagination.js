@@ -12,5 +12,5 @@ function getRootPath(){
     return(localhostPaht+projectName);
 }
 
-// 分页模块
-var app = angular.module("joystreet",[]);
+// 普通模块
+var app = angular.module("joystreet",["pagination"]);

@@ -41,7 +41,7 @@
         </div>
         <div class="box-tools pull-right">
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="searchText" placeholder="搜索" ng-blur="reloadList()">
+                <input type="text" class="form-control" ng-model="search.specName" placeholder="搜索" ng-blur="reloadList()">
             </div>
         </div>
         <!--工具栏/-->
@@ -131,8 +131,9 @@
         </div>
     </div>
 </div>
-<script src="../js/mine/base.js"></script>
-<script src="../js/mine/specific_controller.js"></script>
+<script src="../js/mine/base_pagination.js"></script>
+<script src="../js/mine/controller/base_controller.js"></script>
+<script src="../js/mine/controller/specific_controller.js"></script>
 </body>
 
 </html>

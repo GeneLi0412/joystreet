@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="form-tools pull-right">
-			<input type="text" class="form-control" ng-model="searchtext" placeholder="搜索" ng-blur="reloadList()">
+			<input type="text" class="form-control" ng-model="search.text" placeholder="搜索" ng-blur="reloadList()">
 		</div>
 		<!--工具栏/-->
 		<!--数据列表-->
@@ -44,7 +44,7 @@
 			<thead>
 			<tr>
 				<th class="" style="padding-right:0px">
-					<input id="selall" type="checkbox" class="icheckbox_square-blue" ng-click="selall($event, 'brandId')">
+					<input id="selall" type="checkbox" class="icheckbox_square-blue" ng-click="selectAll($event, 'brandId')">
 				</th>
 				<th class="sorting_asc">品牌ID</th>
 				<th class="sorting">品牌名称</th>
@@ -96,7 +96,8 @@
 </div>
 
 <!-- 引入script文件 -->
-<script src="../js/mine/base.js"></script>
-<script src="../js/mine/brand_controller.js"></script>
+<script src="../js/mine/base_pagination.js"></script>
+<script src="../js/mine/controller/base_controller.js"></script>
+<script src="../js/mine/controller/brand_controller.js"></script>
 </body>
 </html>
