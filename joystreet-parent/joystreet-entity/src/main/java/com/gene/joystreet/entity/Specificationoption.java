@@ -1,11 +1,21 @@
 package com.gene.joystreet.entity;
 
-public class Specificationoption {
-    private String id;
+import java.io.Serializable;
+
+/**
+ * 规格详情
+ * @author: LJP
+ * @date: 2018年12月4日 上午9:23:11
+ */
+public class Specificationoption implements Serializable{
+	
+	private static final long serialVersionUID = 66565428841854827L;
+
+	private String id;
 
     private String optionName;
 
-    private Long specId;
+    private String specId;
 
     private Integer orders;
 
@@ -25,11 +35,11 @@ public class Specificationoption {
         this.optionName = optionName == null ? null : optionName.trim();
     }
 
-    public Long getSpecId() {
+    public String getSpecId() {
         return specId;
     }
 
-    public void setSpecId(Long specId) {
+    public void setSpecId(String specId) {
         this.specId = specId;
     }
 

@@ -305,52 +305,62 @@ public class PaylogExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeEqualTo(Long value) {
+        public Criteria andTotalFeeEqualTo(String value) {
             addCriterion("total_fee =", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotEqualTo(Long value) {
+        public Criteria andTotalFeeNotEqualTo(String value) {
             addCriterion("total_fee <>", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeGreaterThan(Long value) {
+        public Criteria andTotalFeeGreaterThan(String value) {
             addCriterion("total_fee >", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeGreaterThanOrEqualTo(Long value) {
+        public Criteria andTotalFeeGreaterThanOrEqualTo(String value) {
             addCriterion("total_fee >=", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeLessThan(Long value) {
+        public Criteria andTotalFeeLessThan(String value) {
             addCriterion("total_fee <", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeLessThanOrEqualTo(Long value) {
+        public Criteria andTotalFeeLessThanOrEqualTo(String value) {
             addCriterion("total_fee <=", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeIn(List<Long> values) {
+        public Criteria andTotalFeeLike(String value) {
+            addCriterion("total_fee like", value, "totalFee");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalFeeNotLike(String value) {
+            addCriterion("total_fee not like", value, "totalFee");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalFeeIn(List<String> values) {
             addCriterion("total_fee in", values, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotIn(List<Long> values) {
+        public Criteria andTotalFeeNotIn(List<String> values) {
             addCriterion("total_fee not in", values, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeBetween(Long value1, Long value2) {
+        public Criteria andTotalFeeBetween(String value1, String value2) {
             addCriterion("total_fee between", value1, value2, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotBetween(Long value1, Long value2) {
+        public Criteria andTotalFeeNotBetween(String value1, String value2) {
             addCriterion("total_fee not between", value1, value2, "totalFee");
             return (Criteria) this;
         }

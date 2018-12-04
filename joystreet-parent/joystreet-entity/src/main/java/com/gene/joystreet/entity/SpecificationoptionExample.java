@@ -254,52 +254,52 @@ public class SpecificationoptionExample {
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdEqualTo(Long value) {
+        public Criteria andSpecIdEqualTo(String value) {
             addCriterion("spec_id =", value, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdNotEqualTo(Long value) {
+        public Criteria andSpecIdNotEqualTo(String value) {
             addCriterion("spec_id <>", value, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdGreaterThan(Long value) {
+        public Criteria andSpecIdGreaterThan(String value) {
             addCriterion("spec_id >", value, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdGreaterThanOrEqualTo(Long value) {
+        public Criteria andSpecIdGreaterThanOrEqualTo(String value) {
             addCriterion("spec_id >=", value, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdLessThan(Long value) {
+        public Criteria andSpecIdLessThan(String value) {
             addCriterion("spec_id <", value, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdLessThanOrEqualTo(Long value) {
+        public Criteria andSpecIdLessThanOrEqualTo(String value) {
             addCriterion("spec_id <=", value, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdIn(List<Long> values) {
+        public Criteria andSpecIdIn(List<String> values) {
             addCriterion("spec_id in", values, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdNotIn(List<Long> values) {
+        public Criteria andSpecIdNotIn(List<String> values) {
             addCriterion("spec_id not in", values, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdBetween(Long value1, Long value2) {
+        public Criteria andSpecIdBetween(String value1, String value2) {
             addCriterion("spec_id between", value1, value2, "specId");
             return (Criteria) this;
         }
 
-        public Criteria andSpecIdNotBetween(Long value1, Long value2) {
+        public Criteria andSpecIdNotBetween(String value1, String value2) {
             addCriterion("spec_id not between", value1, value2, "specId");
             return (Criteria) this;
         }

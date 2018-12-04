@@ -10,7 +10,7 @@
     <result column="num" jdbcType="INTEGER" property="num" />
     <result column="barcode" jdbcType="VARCHAR" property="barcode" />
     <result column="image" jdbcType="VARCHAR" property="image" />
-    <result column="categoryId" jdbcType="BIGINT" property="categoryid" />
+    <result column="categoryId" jdbcType="VARCHAR" property="categoryid" />
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
@@ -18,7 +18,7 @@
     <result column="cost_pirce" jdbcType="DECIMAL" property="costPirce" />
     <result column="market_price" jdbcType="DECIMAL" property="marketPrice" />
     <result column="is_default" jdbcType="VARCHAR" property="isDefault" />
-    <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
+    <result column="goods_id" jdbcType="VARCHAR" property="goodsId" />
     <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
     <result column="cart_thumbnail" jdbcType="VARCHAR" property="cartThumbnail" />
     <result column="category" jdbcType="VARCHAR" property="category" />
@@ -131,10 +131,10 @@
       spec, seller)
     values (#{id,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{sellPoint,jdbcType=VARCHAR}, 
       #{price,jdbcType=DECIMAL}, #{stockCount,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, 
-      #{barcode,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{categoryid,jdbcType=BIGINT}, 
+      #{barcode,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{categoryid,jdbcType=VARCHAR}, 
       #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{itemSn,jdbcType=VARCHAR}, #{costPirce,jdbcType=DECIMAL}, #{marketPrice,jdbcType=DECIMAL}, 
-      #{isDefault,jdbcType=VARCHAR}, #{goodsId,jdbcType=BIGINT}, #{sellerId,jdbcType=VARCHAR}, 
+      #{isDefault,jdbcType=VARCHAR}, #{goodsId,jdbcType=VARCHAR}, #{sellerId,jdbcType=VARCHAR}, 
       #{cartThumbnail,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
       #{spec,jdbcType=VARCHAR}, #{seller,jdbcType=VARCHAR})
   </insert>
@@ -237,7 +237,7 @@
         #{image,jdbcType=VARCHAR},
       </if>
       <if test="categoryid != null">
-        #{categoryid,jdbcType=BIGINT},
+        #{categoryid,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         #{status,jdbcType=VARCHAR},
@@ -261,7 +261,7 @@
         #{isDefault,jdbcType=VARCHAR},
       </if>
       <if test="goodsId != null">
-        #{goodsId,jdbcType=BIGINT},
+        #{goodsId,jdbcType=VARCHAR},
       </if>
       <if test="sellerId != null">
         #{sellerId,jdbcType=VARCHAR},
@@ -317,7 +317,7 @@
         image = #{record.image,jdbcType=VARCHAR},
       </if>
       <if test="record.categoryid != null">
-        categoryId = #{record.categoryid,jdbcType=BIGINT},
+        categoryId = #{record.categoryid,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
         status = #{record.status,jdbcType=VARCHAR},
@@ -341,7 +341,7 @@
         is_default = #{record.isDefault,jdbcType=VARCHAR},
       </if>
       <if test="record.goodsId != null">
-        goods_id = #{record.goodsId,jdbcType=BIGINT},
+        goods_id = #{record.goodsId,jdbcType=VARCHAR},
       </if>
       <if test="record.sellerId != null">
         seller_id = #{record.sellerId,jdbcType=VARCHAR},
@@ -376,7 +376,7 @@
       num = #{record.num,jdbcType=INTEGER},
       barcode = #{record.barcode,jdbcType=VARCHAR},
       image = #{record.image,jdbcType=VARCHAR},
-      categoryId = #{record.categoryid,jdbcType=BIGINT},
+      categoryId = #{record.categoryid,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
@@ -384,7 +384,7 @@
       cost_pirce = #{record.costPirce,jdbcType=DECIMAL},
       market_price = #{record.marketPrice,jdbcType=DECIMAL},
       is_default = #{record.isDefault,jdbcType=VARCHAR},
-      goods_id = #{record.goodsId,jdbcType=BIGINT},
+      goods_id = #{record.goodsId,jdbcType=VARCHAR},
       seller_id = #{record.sellerId,jdbcType=VARCHAR},
       cart_thumbnail = #{record.cartThumbnail,jdbcType=VARCHAR},
       category = #{record.category,jdbcType=VARCHAR},
@@ -420,7 +420,7 @@
         image = #{image,jdbcType=VARCHAR},
       </if>
       <if test="categoryid != null">
-        categoryId = #{categoryid,jdbcType=BIGINT},
+        categoryId = #{categoryid,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=VARCHAR},
@@ -444,7 +444,7 @@
         is_default = #{isDefault,jdbcType=VARCHAR},
       </if>
       <if test="goodsId != null">
-        goods_id = #{goodsId,jdbcType=BIGINT},
+        goods_id = #{goodsId,jdbcType=VARCHAR},
       </if>
       <if test="sellerId != null">
         seller_id = #{sellerId,jdbcType=VARCHAR},
@@ -476,7 +476,7 @@
       num = #{num,jdbcType=INTEGER},
       barcode = #{barcode,jdbcType=VARCHAR},
       image = #{image,jdbcType=VARCHAR},
-      categoryId = #{categoryid,jdbcType=BIGINT},
+      categoryId = #{categoryid,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
@@ -484,7 +484,7 @@
       cost_pirce = #{costPirce,jdbcType=DECIMAL},
       market_price = #{marketPrice,jdbcType=DECIMAL},
       is_default = #{isDefault,jdbcType=VARCHAR},
-      goods_id = #{goodsId,jdbcType=BIGINT},
+      goods_id = #{goodsId,jdbcType=VARCHAR},
       seller_id = #{sellerId,jdbcType=VARCHAR},
       cart_thumbnail = #{cartThumbnail,jdbcType=VARCHAR},
       category = #{category,jdbcType=VARCHAR},

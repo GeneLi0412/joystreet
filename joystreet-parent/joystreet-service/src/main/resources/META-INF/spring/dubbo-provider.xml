@@ -11,7 +11,7 @@
             http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
             
     <!-- 配置要扫描的包 -->
-    <context:component-scan base-package="com.gene.joystreet.brand.service.impl"/>
+    <context:component-scan base-package="com.gene.joystreet.*.service.impl"/>
 	
     <!--提供方应用信息 -->
     <dubbo:application name="joystreet-seller-provider"/>
@@ -22,10 +22,17 @@
     <!-- 用dubbo协议定义暴露的port -->
     <dubbo:protocol name="dubbo" port="${dubbo.port}"/>
 
-    <!-- 地址接口  -->
+    <!-- 品牌服务  -->
     <dubbo:service
             interface="com.gene.joystreet.brand.service.IBrandService"
             ref="brandServiceImpl" timeout="${zookeeper.timeout}"
             version="${zookeeper.version}"></dubbo:service>
-
+    <!-- 品牌服务  -->
+    
+    <!-- 规格服务  -->
+    <dubbo:service
+            interface="com.gene.joystreet.specification.service.ISpecificationService"
+            ref="specificationServiceImpl" timeout="${zookeeper.timeout}"
+            version="${zookeeper.version}"></dubbo:service>
+    <!-- 规格服务  -->
 </beans>

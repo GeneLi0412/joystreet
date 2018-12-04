@@ -6,7 +6,7 @@ import java.util.Date;
 public class Seckillorder {
     private String id;
 
-    private Long seckillId;
+    private String seckillId;
 
     private BigDecimal money;
 
@@ -36,12 +36,12 @@ public class Seckillorder {
         this.id = id == null ? null : id.trim();
     }
 
-    public Long getSeckillId() {
+    public String getSeckillId() {
         return seckillId;
     }
 
-    public void setSeckillId(Long seckillId) {
-        this.seckillId = seckillId;
+    public void setSeckillId(String seckillId) {
+        this.seckillId = seckillId == null ? null : seckillId.trim();
     }
 
     public BigDecimal getMoney() {

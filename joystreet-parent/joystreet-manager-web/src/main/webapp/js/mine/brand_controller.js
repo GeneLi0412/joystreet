@@ -14,9 +14,8 @@ app.controller("brandController", function($scope, $http){
     // 分页控制配置
     $scope.paginationConf = {
         currentPage:1,
-        totalItems:10,
         itemsPerPage:10,
-        perPageOptions:[10,20,30],
+        perPageOptions:[5,15,20,25,30],
         onChange:function(){
             $scope.reloadList();
         }

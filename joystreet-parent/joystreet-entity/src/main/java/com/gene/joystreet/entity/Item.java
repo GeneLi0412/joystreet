@@ -20,7 +20,7 @@ public class Item {
 
     private String image;
 
-    private Long categoryid;
+    private String categoryid;
 
     private String status;
 
@@ -36,7 +36,7 @@ public class Item {
 
     private String isDefault;
 
-    private Long goodsId;
+    private String goodsId;
 
     private String sellerId;
 
@@ -114,12 +114,12 @@ public class Item {
         this.image = image == null ? null : image.trim();
     }
 
-    public Long getCategoryid() {
+    public String getCategoryid() {
         return categoryid;
     }
 
-    public void setCategoryid(Long categoryid) {
-        this.categoryid = categoryid;
+    public void setCategoryid(String categoryid) {
+        this.categoryid = categoryid == null ? null : categoryid.trim();
     }
 
     public String getStatus() {
@@ -178,12 +178,12 @@ public class Item {
         this.isDefault = isDefault == null ? null : isDefault.trim();
     }
 
-    public Long getGoodsId() {
+    public String getGoodsId() {
         return goodsId;
     }
 
-    public void setGoodsId(Long goodsId) {
-        this.goodsId = goodsId;
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId == null ? null : goodsId.trim();
     }
 
     public String getSellerId() {

@@ -184,52 +184,62 @@ public class ItemcatExample {
             return (Criteria) this;
         }
 
-        public Criteria andParentIdEqualTo(Long value) {
+        public Criteria andParentIdEqualTo(String value) {
             addCriterion("parent_id =", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdNotEqualTo(Long value) {
+        public Criteria andParentIdNotEqualTo(String value) {
             addCriterion("parent_id <>", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdGreaterThan(Long value) {
+        public Criteria andParentIdGreaterThan(String value) {
             addCriterion("parent_id >", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdGreaterThanOrEqualTo(Long value) {
+        public Criteria andParentIdGreaterThanOrEqualTo(String value) {
             addCriterion("parent_id >=", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdLessThan(Long value) {
+        public Criteria andParentIdLessThan(String value) {
             addCriterion("parent_id <", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdLessThanOrEqualTo(Long value) {
+        public Criteria andParentIdLessThanOrEqualTo(String value) {
             addCriterion("parent_id <=", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdIn(List<Long> values) {
+        public Criteria andParentIdLike(String value) {
+            addCriterion("parent_id like", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdNotLike(String value) {
+            addCriterion("parent_id not like", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdIn(List<String> values) {
             addCriterion("parent_id in", values, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdNotIn(List<Long> values) {
+        public Criteria andParentIdNotIn(List<String> values) {
             addCriterion("parent_id not in", values, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdBetween(Long value1, Long value2) {
+        public Criteria andParentIdBetween(String value1, String value2) {
             addCriterion("parent_id between", value1, value2, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdNotBetween(Long value1, Long value2) {
+        public Criteria andParentIdNotBetween(String value1, String value2) {
             addCriterion("parent_id not between", value1, value2, "parentId");
             return (Criteria) this;
         }
@@ -314,52 +324,62 @@ public class ItemcatExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdEqualTo(Long value) {
+        public Criteria andTypeIdEqualTo(String value) {
             addCriterion("type_id =", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdNotEqualTo(Long value) {
+        public Criteria andTypeIdNotEqualTo(String value) {
             addCriterion("type_id <>", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdGreaterThan(Long value) {
+        public Criteria andTypeIdGreaterThan(String value) {
             addCriterion("type_id >", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdGreaterThanOrEqualTo(Long value) {
+        public Criteria andTypeIdGreaterThanOrEqualTo(String value) {
             addCriterion("type_id >=", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdLessThan(Long value) {
+        public Criteria andTypeIdLessThan(String value) {
             addCriterion("type_id <", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdLessThanOrEqualTo(Long value) {
+        public Criteria andTypeIdLessThanOrEqualTo(String value) {
             addCriterion("type_id <=", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdIn(List<Long> values) {
+        public Criteria andTypeIdLike(String value) {
+            addCriterion("type_id like", value, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdNotLike(String value) {
+            addCriterion("type_id not like", value, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdIn(List<String> values) {
             addCriterion("type_id in", values, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdNotIn(List<Long> values) {
+        public Criteria andTypeIdNotIn(List<String> values) {
             addCriterion("type_id not in", values, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdBetween(Long value1, Long value2) {
+        public Criteria andTypeIdBetween(String value1, String value2) {
             addCriterion("type_id between", value1, value2, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdNotBetween(Long value1, Long value2) {
+        public Criteria andTypeIdNotBetween(String value1, String value2) {
             addCriterion("type_id not between", value1, value2, "typeId");
             return (Criteria) this;
         }

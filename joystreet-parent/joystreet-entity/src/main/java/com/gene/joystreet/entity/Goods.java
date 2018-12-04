@@ -9,27 +9,27 @@ public class Goods {
 
     private String goodsName;
 
-    private Long defaultItemId;
+    private String defaultItemId;
 
     private String auditStatus;
 
     private String isMarketable;
 
-    private Long brandId;
+    private String brandId;
 
     private String caption;
 
-    private Long category1Id;
+    private String category1Id;
 
-    private Long category2Id;
+    private String category2Id;
 
-    private Long category3Id;
+    private String category3Id;
 
     private String smallPic;
 
     private BigDecimal price;
 
-    private Long typeTemplateId;
+    private String typeTemplateId;
 
     private String isEnableSpec;
 
@@ -59,12 +59,12 @@ public class Goods {
         this.goodsName = goodsName == null ? null : goodsName.trim();
     }
 
-    public Long getDefaultItemId() {
+    public String getDefaultItemId() {
         return defaultItemId;
     }
 
-    public void setDefaultItemId(Long defaultItemId) {
-        this.defaultItemId = defaultItemId;
+    public void setDefaultItemId(String defaultItemId) {
+        this.defaultItemId = defaultItemId == null ? null : defaultItemId.trim();
     }
 
     public String getAuditStatus() {
@@ -83,12 +83,12 @@ public class Goods {
         this.isMarketable = isMarketable == null ? null : isMarketable.trim();
     }
 
-    public Long getBrandId() {
+    public String getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(Long brandId) {
-        this.brandId = brandId;
+    public void setBrandId(String brandId) {
+        this.brandId = brandId == null ? null : brandId.trim();
     }
 
     public String getCaption() {
@@ -99,28 +99,28 @@ public class Goods {
         this.caption = caption == null ? null : caption.trim();
     }
 
-    public Long getCategory1Id() {
+    public String getCategory1Id() {
         return category1Id;
     }
 
-    public void setCategory1Id(Long category1Id) {
-        this.category1Id = category1Id;
+    public void setCategory1Id(String category1Id) {
+        this.category1Id = category1Id == null ? null : category1Id.trim();
     }
 
-    public Long getCategory2Id() {
+    public String getCategory2Id() {
         return category2Id;
     }
 
-    public void setCategory2Id(Long category2Id) {
-        this.category2Id = category2Id;
+    public void setCategory2Id(String category2Id) {
+        this.category2Id = category2Id == null ? null : category2Id.trim();
     }
 
-    public Long getCategory3Id() {
+    public String getCategory3Id() {
         return category3Id;
     }
 
-    public void setCategory3Id(Long category3Id) {
-        this.category3Id = category3Id;
+    public void setCategory3Id(String category3Id) {
+        this.category3Id = category3Id == null ? null : category3Id.trim();
     }
 
     public String getSmallPic() {
@@ -139,12 +139,12 @@ public class Goods {
         this.price = price;
     }
 
-    public Long getTypeTemplateId() {
+    public String getTypeTemplateId() {
         return typeTemplateId;
     }
 
-    public void setTypeTemplateId(Long typeTemplateId) {
-        this.typeTemplateId = typeTemplateId;
+    public void setTypeTemplateId(String typeTemplateId) {
+        this.typeTemplateId = typeTemplateId == null ? null : typeTemplateId.trim();
     }
 
     public String getIsEnableSpec() {

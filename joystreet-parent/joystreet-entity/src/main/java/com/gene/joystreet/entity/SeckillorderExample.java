@@ -186,52 +186,62 @@ public class SeckillorderExample {
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdEqualTo(Long value) {
+        public Criteria andSeckillIdEqualTo(String value) {
             addCriterion("seckill_id =", value, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdNotEqualTo(Long value) {
+        public Criteria andSeckillIdNotEqualTo(String value) {
             addCriterion("seckill_id <>", value, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdGreaterThan(Long value) {
+        public Criteria andSeckillIdGreaterThan(String value) {
             addCriterion("seckill_id >", value, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdGreaterThanOrEqualTo(Long value) {
+        public Criteria andSeckillIdGreaterThanOrEqualTo(String value) {
             addCriterion("seckill_id >=", value, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdLessThan(Long value) {
+        public Criteria andSeckillIdLessThan(String value) {
             addCriterion("seckill_id <", value, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdLessThanOrEqualTo(Long value) {
+        public Criteria andSeckillIdLessThanOrEqualTo(String value) {
             addCriterion("seckill_id <=", value, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdIn(List<Long> values) {
+        public Criteria andSeckillIdLike(String value) {
+            addCriterion("seckill_id like", value, "seckillId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSeckillIdNotLike(String value) {
+            addCriterion("seckill_id not like", value, "seckillId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSeckillIdIn(List<String> values) {
             addCriterion("seckill_id in", values, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdNotIn(List<Long> values) {
+        public Criteria andSeckillIdNotIn(List<String> values) {
             addCriterion("seckill_id not in", values, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdBetween(Long value1, Long value2) {
+        public Criteria andSeckillIdBetween(String value1, String value2) {
             addCriterion("seckill_id between", value1, value2, "seckillId");
             return (Criteria) this;
         }
 
-        public Criteria andSeckillIdNotBetween(Long value1, Long value2) {
+        public Criteria andSeckillIdNotBetween(String value1, String value2) {
             addCriterion("seckill_id not between", value1, value2, "seckillId");
             return (Criteria) this;
         }

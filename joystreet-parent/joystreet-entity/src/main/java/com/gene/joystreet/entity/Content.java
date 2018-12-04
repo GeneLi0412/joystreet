@@ -3,7 +3,7 @@ package com.gene.joystreet.entity;
 public class Content {
     private String id;
 
-    private Long categoryId;
+    private String categoryId;
 
     private String title;
 
@@ -23,12 +23,12 @@ public class Content {
         this.id = id == null ? null : id.trim();
     }
 
-    public Long getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId == null ? null : categoryId.trim();
     }
 
     public String getTitle() {

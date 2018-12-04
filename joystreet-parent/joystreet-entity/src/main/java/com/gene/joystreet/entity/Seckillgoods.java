@@ -6,9 +6,9 @@ import java.util.Date;
 public class Seckillgoods {
     private String id;
 
-    private Long goodsId;
+    private String goodsId;
 
-    private Long itemId;
+    private String itemId;
 
     private String title;
 
@@ -44,20 +44,20 @@ public class Seckillgoods {
         this.id = id == null ? null : id.trim();
     }
 
-    public Long getGoodsId() {
+    public String getGoodsId() {
         return goodsId;
     }
 
-    public void setGoodsId(Long goodsId) {
-        this.goodsId = goodsId;
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId == null ? null : goodsId.trim();
     }
 
-    public Long getItemId() {
+    public String getItemId() {
         return itemId;
     }
 
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
+    public void setItemId(String itemId) {
+        this.itemId = itemId == null ? null : itemId.trim();
     }
 
     public String getTitle() {

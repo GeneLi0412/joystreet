@@ -3,7 +3,7 @@
 <mapper namespace="com.gene.joystreet.dao.ContentMapper">
   <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Content">
     <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="category_id" jdbcType="VARCHAR" property="categoryId" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="pic" jdbcType="VARCHAR" property="pic" />
@@ -106,7 +106,7 @@
     insert into tb_content (id, category_id, title, 
       url, pic, status, sort_order
       )
-    values (#{id,jdbcType=VARCHAR}, #{categoryId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{categoryId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
       #{url,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{sortOrder,jdbcType=INTEGER}
       )
   </insert>
@@ -140,7 +140,7 @@
         #{id,jdbcType=VARCHAR},
       </if>
       <if test="categoryId != null">
-        #{categoryId,jdbcType=BIGINT},
+        #{categoryId,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
@@ -172,7 +172,7 @@
         id = #{record.id,jdbcType=VARCHAR},
       </if>
       <if test="record.categoryId != null">
-        category_id = #{record.categoryId,jdbcType=BIGINT},
+        category_id = #{record.categoryId,jdbcType=VARCHAR},
       </if>
       <if test="record.title != null">
         title = #{record.title,jdbcType=VARCHAR},
@@ -197,7 +197,7 @@
   <update id="updateByExample" parameterType="map">
     update tb_content
     set id = #{record.id,jdbcType=VARCHAR},
-      category_id = #{record.categoryId,jdbcType=BIGINT},
+      category_id = #{record.categoryId,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       url = #{record.url,jdbcType=VARCHAR},
       pic = #{record.pic,jdbcType=VARCHAR},
@@ -211,7 +211,7 @@
     update tb_content
     <set>
       <if test="categoryId != null">
-        category_id = #{categoryId,jdbcType=BIGINT},
+        category_id = #{categoryId,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
@@ -233,7 +233,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.gene.joystreet.entity.Content">
     update tb_content
-    set category_id = #{categoryId,jdbcType=BIGINT},
+    set category_id = #{categoryId,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},

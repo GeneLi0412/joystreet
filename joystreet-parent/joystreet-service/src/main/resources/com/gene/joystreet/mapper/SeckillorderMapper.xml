@@ -3,7 +3,7 @@
 <mapper namespace="com.gene.joystreet.dao.SeckillorderMapper">
   <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Seckillorder">
     <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="seckill_id" jdbcType="BIGINT" property="seckillId" />
+    <result column="seckill_id" jdbcType="VARCHAR" property="seckillId" />
     <result column="money" jdbcType="DECIMAL" property="money" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
@@ -114,7 +114,7 @@
       pay_time, status, receiver_address, 
       receiver_mobile, receiver, transaction_id
       )
-    values (#{id,jdbcType=VARCHAR}, #{seckillId,jdbcType=BIGINT}, #{money,jdbcType=DECIMAL}, 
+    values (#{id,jdbcType=VARCHAR}, #{seckillId,jdbcType=VARCHAR}, #{money,jdbcType=DECIMAL}, 
       #{userId,jdbcType=VARCHAR}, #{sellerId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{payTime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, #{receiverAddress,jdbcType=VARCHAR}, 
       #{receiverMobile,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, #{transactionId,jdbcType=VARCHAR}
@@ -165,7 +165,7 @@
         #{id,jdbcType=VARCHAR},
       </if>
       <if test="seckillId != null">
-        #{seckillId,jdbcType=BIGINT},
+        #{seckillId,jdbcType=VARCHAR},
       </if>
       <if test="money != null">
         #{money,jdbcType=DECIMAL},
@@ -212,7 +212,7 @@
         id = #{record.id,jdbcType=VARCHAR},
       </if>
       <if test="record.seckillId != null">
-        seckill_id = #{record.seckillId,jdbcType=BIGINT},
+        seckill_id = #{record.seckillId,jdbcType=VARCHAR},
       </if>
       <if test="record.money != null">
         money = #{record.money,jdbcType=DECIMAL},
@@ -252,7 +252,7 @@
   <update id="updateByExample" parameterType="map">
     update tb_seckill_order
     set id = #{record.id,jdbcType=VARCHAR},
-      seckill_id = #{record.seckillId,jdbcType=BIGINT},
+      seckill_id = #{record.seckillId,jdbcType=VARCHAR},
       money = #{record.money,jdbcType=DECIMAL},
       user_id = #{record.userId,jdbcType=VARCHAR},
       seller_id = #{record.sellerId,jdbcType=VARCHAR},
@@ -271,7 +271,7 @@
     update tb_seckill_order
     <set>
       <if test="seckillId != null">
-        seckill_id = #{seckillId,jdbcType=BIGINT},
+        seckill_id = #{seckillId,jdbcType=VARCHAR},
       </if>
       <if test="money != null">
         money = #{money,jdbcType=DECIMAL},
@@ -308,7 +308,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.gene.joystreet.entity.Seckillorder">
     update tb_seckill_order
-    set seckill_id = #{seckillId,jdbcType=BIGINT},
+    set seckill_id = #{seckillId,jdbcType=VARCHAR},
       money = #{money,jdbcType=DECIMAL},
       user_id = #{userId,jdbcType=VARCHAR},
       seller_id = #{sellerId,jdbcType=VARCHAR},

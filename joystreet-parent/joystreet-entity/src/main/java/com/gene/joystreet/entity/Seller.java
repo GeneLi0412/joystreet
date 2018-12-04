@@ -35,7 +35,7 @@ public class Seller {
 
     private String orgNumber;
 
-    private Long address;
+    private String address;
 
     private String logoPic;
 
@@ -179,12 +179,12 @@ public class Seller {
         this.orgNumber = orgNumber == null ? null : orgNumber.trim();
     }
 
-    public Long getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Long address) {
-        this.address = address;
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
     }
 
     public String getLogoPic() {

@@ -13,6 +13,11 @@
 		</plugin>
 	</plugins>
 	<mappers>
+		<!-- 品牌 -->
 		<mapper resource="com/gene/joystreet/mapper/BrandMapper.xml"/>
+		<!-- 规格 -->
+		<mapper resource="com/gene/joystreet/mapper/SpecificationMapper.xml"/>
+		<!-- 规格详情 -->
+		<mapper resource="com/gene/joystreet/mapper/SpecificationoptionMapper.xml"/>
 	</mappers>
 </configuration>

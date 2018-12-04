@@ -3,8 +3,8 @@
 <mapper namespace="com.gene.joystreet.dao.SeckillgoodsMapper">
   <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Seckillgoods">
     <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
-    <result column="item_id" jdbcType="BIGINT" property="itemId" />
+    <result column="goods_id" jdbcType="VARCHAR" property="goodsId" />
+    <result column="item_id" jdbcType="VARCHAR" property="itemId" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="small_pic" jdbcType="VARCHAR" property="smallPic" />
     <result column="price" jdbcType="DECIMAL" property="price" />
@@ -119,7 +119,7 @@
       check_time, status, start_time, 
       end_time, num, stock_count, 
       introduction)
-    values (#{id,jdbcType=VARCHAR}, #{goodsId,jdbcType=BIGINT}, #{itemId,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=VARCHAR}, #{goodsId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, 
       #{title,jdbcType=VARCHAR}, #{smallPic,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
       #{costPrice,jdbcType=DECIMAL}, #{sellerId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{checkTime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, 
@@ -183,10 +183,10 @@
         #{id,jdbcType=VARCHAR},
       </if>
       <if test="goodsId != null">
-        #{goodsId,jdbcType=BIGINT},
+        #{goodsId,jdbcType=VARCHAR},
       </if>
       <if test="itemId != null">
-        #{itemId,jdbcType=BIGINT},
+        #{itemId,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
@@ -242,10 +242,10 @@
         id = #{record.id,jdbcType=VARCHAR},
       </if>
       <if test="record.goodsId != null">
-        goods_id = #{record.goodsId,jdbcType=BIGINT},
+        goods_id = #{record.goodsId,jdbcType=VARCHAR},
       </if>
       <if test="record.itemId != null">
-        item_id = #{record.itemId,jdbcType=BIGINT},
+        item_id = #{record.itemId,jdbcType=VARCHAR},
       </if>
       <if test="record.title != null">
         title = #{record.title,jdbcType=VARCHAR},
@@ -294,8 +294,8 @@
   <update id="updateByExample" parameterType="map">
     update tb_seckill_goods
     set id = #{record.id,jdbcType=VARCHAR},
-      goods_id = #{record.goodsId,jdbcType=BIGINT},
-      item_id = #{record.itemId,jdbcType=BIGINT},
+      goods_id = #{record.goodsId,jdbcType=VARCHAR},
+      item_id = #{record.itemId,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       small_pic = #{record.smallPic,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DECIMAL},
@@ -317,10 +317,10 @@
     update tb_seckill_goods
     <set>
       <if test="goodsId != null">
-        goods_id = #{goodsId,jdbcType=BIGINT},
+        goods_id = #{goodsId,jdbcType=VARCHAR},
       </if>
       <if test="itemId != null">
-        item_id = #{itemId,jdbcType=BIGINT},
+        item_id = #{itemId,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
@@ -366,8 +366,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.gene.joystreet.entity.Seckillgoods">
     update tb_seckill_goods
-    set goods_id = #{goodsId,jdbcType=BIGINT},
-      item_id = #{itemId,jdbcType=BIGINT},
+    set goods_id = #{goodsId,jdbcType=VARCHAR},
+      item_id = #{itemId,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
       small_pic = #{smallPic,jdbcType=VARCHAR},
       price = #{price,jdbcType=DECIMAL},

@@ -5,7 +5,7 @@
     <id column="out_trade_no" jdbcType="VARCHAR" property="outTradeNo" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
-    <result column="total_fee" jdbcType="BIGINT" property="totalFee" />
+    <result column="total_fee" jdbcType="VARCHAR" property="totalFee" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
     <result column="trade_state" jdbcType="VARCHAR" property="tradeState" />
@@ -111,7 +111,7 @@
       trade_state, order_list, pay_type
       )
     values (#{outTradeNo,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{payTime,jdbcType=TIMESTAMP}, 
-      #{totalFee,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{transactionId,jdbcType=VARCHAR}, 
+      #{totalFee,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{transactionId,jdbcType=VARCHAR}, 
       #{tradeState,jdbcType=VARCHAR}, #{orderList,jdbcType=VARCHAR}, #{payType,jdbcType=VARCHAR}
       )
   </insert>
@@ -157,7 +157,7 @@
         #{payTime,jdbcType=TIMESTAMP},
       </if>
       <if test="totalFee != null">
-        #{totalFee,jdbcType=BIGINT},
+        #{totalFee,jdbcType=VARCHAR},
       </if>
       <if test="userId != null">
         #{userId,jdbcType=VARCHAR},
@@ -195,7 +195,7 @@
         pay_time = #{record.payTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.totalFee != null">
-        total_fee = #{record.totalFee,jdbcType=BIGINT},
+        total_fee = #{record.totalFee,jdbcType=VARCHAR},
       </if>
       <if test="record.userId != null">
         user_id = #{record.userId,jdbcType=VARCHAR},
@@ -222,7 +222,7 @@
     set out_trade_no = #{record.outTradeNo,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       pay_time = #{record.payTime,jdbcType=TIMESTAMP},
-      total_fee = #{record.totalFee,jdbcType=BIGINT},
+      total_fee = #{record.totalFee,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=VARCHAR},
       transaction_id = #{record.transactionId,jdbcType=VARCHAR},
       trade_state = #{record.tradeState,jdbcType=VARCHAR},
@@ -242,7 +242,7 @@
         pay_time = #{payTime,jdbcType=TIMESTAMP},
       </if>
       <if test="totalFee != null">
-        total_fee = #{totalFee,jdbcType=BIGINT},
+        total_fee = #{totalFee,jdbcType=VARCHAR},
       </if>
       <if test="userId != null">
         user_id = #{userId,jdbcType=VARCHAR},
@@ -266,7 +266,7 @@
     update tb_pay_log
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       pay_time = #{payTime,jdbcType=TIMESTAMP},
-      total_fee = #{totalFee,jdbcType=BIGINT},
+      total_fee = #{totalFee,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=VARCHAR},
       transaction_id = #{transactionId,jdbcType=VARCHAR},
       trade_state = #{tradeState,jdbcType=VARCHAR},

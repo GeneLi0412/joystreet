@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.dubbo.common.utils.StringUtils;
 import com.gene.joystreet.brand.service.IBrandService;
 import com.gene.joystreet.common.SystemMessageConstant;
 import com.gene.joystreet.entity.Brand;
@@ -67,6 +68,11 @@ public class BrandController {
 	@ResponseBody
 	public Map<String, Object> findOne(String id){
 		Map<String, Object> base = new HashMap<>();
+		if(StringUtils.isBlank(id)) {
+			base.put("error", true);
+			base.put("message", "请选择品牌！");
+			return base;
+		}
 		try {
 			base = brandService.findOne(id);
 		} catch (Exception e) {

@@ -9,7 +9,7 @@ public class Paylog {
 
     private Date payTime;
 
-    private Long totalFee;
+    private String totalFee;
 
     private String userId;
 
@@ -45,12 +45,12 @@ public class Paylog {
         this.payTime = payTime;
     }
 
-    public Long getTotalFee() {
+    public String getTotalFee() {
         return totalFee;
     }
 
-    public void setTotalFee(Long totalFee) {
-        this.totalFee = totalFee;
+    public void setTotalFee(String totalFee) {
+        this.totalFee = totalFee == null ? null : totalFee.trim();
     }
 
     public String getUserId() {

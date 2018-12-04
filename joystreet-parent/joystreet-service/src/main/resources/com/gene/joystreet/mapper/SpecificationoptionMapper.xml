@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.gene.joystreet.entity.Specificationoption">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="option_name" jdbcType="VARCHAR" property="optionName" />
-    <result column="spec_id" jdbcType="BIGINT" property="specId" />
+    <result column="spec_id" jdbcType="VARCHAR" property="specId" />
     <result column="orders" jdbcType="INTEGER" property="orders" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -102,7 +102,7 @@
   <insert id="insert" parameterType="com.gene.joystreet.entity.Specificationoption">
     insert into tb_specification_option (id, option_name, spec_id, 
       orders)
-    values (#{id,jdbcType=VARCHAR}, #{optionName,jdbcType=VARCHAR}, #{specId,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=VARCHAR}, #{optionName,jdbcType=VARCHAR}, #{specId,jdbcType=VARCHAR}, 
       #{orders,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.gene.joystreet.entity.Specificationoption">
@@ -129,7 +129,7 @@
         #{optionName,jdbcType=VARCHAR},
       </if>
       <if test="specId != null">
-        #{specId,jdbcType=BIGINT},
+        #{specId,jdbcType=VARCHAR},
       </if>
       <if test="orders != null">
         #{orders,jdbcType=INTEGER},
@@ -152,7 +152,7 @@
         option_name = #{record.optionName,jdbcType=VARCHAR},
       </if>
       <if test="record.specId != null">
-        spec_id = #{record.specId,jdbcType=BIGINT},
+        spec_id = #{record.specId,jdbcType=VARCHAR},
       </if>
       <if test="record.orders != null">
         orders = #{record.orders,jdbcType=INTEGER},
@@ -166,7 +166,7 @@
     update tb_specification_option
     set id = #{record.id,jdbcType=VARCHAR},
       option_name = #{record.optionName,jdbcType=VARCHAR},
-      spec_id = #{record.specId,jdbcType=BIGINT},
+      spec_id = #{record.specId,jdbcType=VARCHAR},
       orders = #{record.orders,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -179,7 +179,7 @@
         option_name = #{optionName,jdbcType=VARCHAR},
       </if>
       <if test="specId != null">
-        spec_id = #{specId,jdbcType=BIGINT},
+        spec_id = #{specId,jdbcType=VARCHAR},
       </if>
       <if test="orders != null">
         orders = #{orders,jdbcType=INTEGER},
@@ -190,7 +190,7 @@
   <update id="updateByPrimaryKey" parameterType="com.gene.joystreet.entity.Specificationoption">
     update tb_specification_option
     set option_name = #{optionName,jdbcType=VARCHAR},
-      spec_id = #{specId,jdbcType=BIGINT},
+      spec_id = #{specId,jdbcType=VARCHAR},
       orders = #{orders,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
   </update>

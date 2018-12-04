@@ -5,11 +5,11 @@ import java.math.BigDecimal;
 public class Orderitem {
     private String id;
 
-    private Long itemId;
+    private String itemId;
 
-    private Long goodsId;
+    private String goodsId;
 
-    private Long orderId;
+    private String orderId;
 
     private String title;
 
@@ -31,28 +31,28 @@ public class Orderitem {
         this.id = id == null ? null : id.trim();
     }
 
-    public Long getItemId() {
+    public String getItemId() {
         return itemId;
     }
 
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
+    public void setItemId(String itemId) {
+        this.itemId = itemId == null ? null : itemId.trim();
     }
 
-    public Long getGoodsId() {
+    public String getGoodsId() {
         return goodsId;
     }
 
-    public void setGoodsId(Long goodsId) {
-        this.goodsId = goodsId;
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId == null ? null : goodsId.trim();
     }
 
-    public Long getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId == null ? null : orderId.trim();
     }
 
     public String getTitle() {

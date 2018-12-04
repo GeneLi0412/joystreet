@@ -3,11 +3,11 @@ package com.gene.joystreet.entity;
 public class Itemcat {
     private String id;
 
-    private Long parentId;
+    private String parentId;
 
     private String name;
 
-    private Long typeId;
+    private String typeId;
 
     public String getId() {
         return id;
@@ -17,12 +17,12 @@ public class Itemcat {
         this.id = id == null ? null : id.trim();
     }
 
-    public Long getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
+    public void setParentId(String parentId) {
+        this.parentId = parentId == null ? null : parentId.trim();
     }
 
     public String getName() {
@@ -33,11 +33,11 @@ public class Itemcat {
         this.name = name == null ? null : name.trim();
     }
 
-    public Long getTypeId() {
+    public String getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
+    public void setTypeId(String typeId) {
+        this.typeId = typeId == null ? null : typeId.trim();
     }
 }
