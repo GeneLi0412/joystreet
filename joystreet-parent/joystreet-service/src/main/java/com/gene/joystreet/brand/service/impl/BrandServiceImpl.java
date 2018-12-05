@@ -1,5 +1,6 @@
 package com.gene.joystreet.brand.service.impl;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -81,6 +82,27 @@ public class BrandServiceImpl implements IBrandService{
 		brandMapper.deleteByExample(brandExample);
 		base.put("error", false);
 		base.put("message", SystemMessageConstant.OPERATION_SUCCESS);
+		return base;
+	}
+
+	@Override
+	public Map<String, Object> queryAll() {
+		Map<String, Object> base = new HashMap<>();
+		// 前端需求进行封装
+		List<Brand> brands = brandMapper.selectByExample(new BrandExample());
+		// 封装为LIST
+		List<Map<String, Object>> rows = new ArrayList<>();
+		for (Brand brand : brands) {
+			Map<String, Object> map = new HashMap<>();
+			// ID
+			map.put("id", brand.getId());
+			// NAME
+			map.put("text", brand.getName());
+			rows.add(map);
+		}
+		base.put("error", false);
+		base.put("message", SystemMessageConstant.OPERATION_SUCCESS);
+		base.put("data", rows);
 		return base;
 	}
 }

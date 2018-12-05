@@ -25,6 +25,19 @@ public class SpecificationController {
 	@Autowired
 	private ISpecificationService specificationService;
 	
+	@RequestMapping("queryAll")
+	@ResponseBody
+	public Map<String, Object> queryAll(){
+		Map<String, Object> base = new HashMap<>();
+		try {
+			base = specificationService.queryAll();
+		} catch (Exception e) {
+			base.put("error", true);
+			base.put("message", SystemMessageConstant.OPERATION_FAIL);
+		}
+		return base;
+	}
+	
 	/**
 	 * 分页高级查询
 	 * @param page

@@ -1,11 +1,3 @@
-/**
- * jquery plugin -- jquery.slideunlock.js
- * Description: a slideunlock plugin based on jQuery
- * Version: 1.1
- * Author: Dong Yuhao
- * www.sucaijiayuan.com
- * created: March 27, 2016
- */
 
 ;(function ($,window,document,undefined) {
     function SliderUnlock(elm, options, success){

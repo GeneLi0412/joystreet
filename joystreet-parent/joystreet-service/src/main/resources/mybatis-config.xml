@@ -19,5 +19,7 @@
 		<mapper resource="com/gene/joystreet/mapper/SpecificationMapper.xml"/>
 		<!-- 规格详情 -->
 		<mapper resource="com/gene/joystreet/mapper/SpecificationoptionMapper.xml"/>
+		<!-- 商品模板 -->
+		<mapper resource="com/gene/joystreet/mapper/TypetemplateMapper.xml"/>
 	</mappers>
 </configuration>

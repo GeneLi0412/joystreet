@@ -35,4 +35,11 @@
             ref="specificationServiceImpl" timeout="${zookeeper.timeout}"
             version="${zookeeper.version}"></dubbo:service>
     <!-- 规格服务  -->
+    
+    <!-- 模板服务  -->
+    <dubbo:service
+            interface="com.gene.joystreet.template.service.ITemplateService"
+            ref="templateServiceImpl" timeout="${zookeeper.timeout}"
+            version="${zookeeper.version}"></dubbo:service>
+    <!-- 模板服务  -->
 </beans>

@@ -42,5 +42,11 @@ public interface ISpecificationService {
 	 * @return
 	 */
 	public Map<String, Object> querySpecificById(String id);
+
+	/**
+	 * 查询所有
+	 * @return
+	 */
+	public Map<String, Object> queryAll();
 	
 }

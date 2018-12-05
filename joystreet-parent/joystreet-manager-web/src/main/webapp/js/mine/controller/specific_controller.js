@@ -53,7 +53,6 @@ app.controller("specificController", function ($scope, $controller, $http) {
         });
     }
 
-
     /************************新增规格行*************************/
     // 初始化
     $scope.initSpecific = function () {
@@ -64,13 +63,14 @@ app.controller("specificController", function ($scope, $controller, $http) {
     $scope.addOptionRow = function () {
         $scope.specific.options.push({});
     }
-    
+
     // 删除规格行
     $scope.dropRow = function (index) {
         if($scope.specific.options.length > 1){
             $scope.specific.options.splice(index, 1);
         }
     }
+
 
     /***********************新增、修改**************************/
     $scope.saveOrModify = function () {

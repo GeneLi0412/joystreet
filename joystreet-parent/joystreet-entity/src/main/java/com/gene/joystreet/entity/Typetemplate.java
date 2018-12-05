@@ -1,7 +1,12 @@
 package com.gene.joystreet.entity;
 
-public class Typetemplate {
-    private String id;
+import java.io.Serializable;
+
+public class Typetemplate implements Serializable{
+
+	private static final long serialVersionUID = -2435556840118175546L;
+
+	private String id;
 
     private String name;
 

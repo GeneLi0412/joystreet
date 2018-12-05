@@ -28,6 +28,20 @@ public class BrandController {
 	@Autowired
 	private IBrandService brandService;
 
+	
+	@RequestMapping("queryAll")
+	@ResponseBody
+	public Map<String, Object> queryAll(){
+		Map<String, Object> base = new HashMap<>();
+		try {
+			base = brandService.queryAll();
+		} catch (Exception e) {
+			base.put("error", true);
+			base.put("message", SystemMessageConstant.OPERATION_FAIL);
+		}
+		return base;
+	}
+	
 	/**
 	 * 分页查询品牌列表
 	 * @param page

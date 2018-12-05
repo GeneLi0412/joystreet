@@ -52,4 +52,10 @@ public interface IBrandService {
 	 * @return
 	 */
 	public Map<String, Object> deleteByIds(String[] ids);
+
+	/**
+	 * 查询全部
+	 * @return
+	 */
+	public Map<String, Object> queryAll();
 }

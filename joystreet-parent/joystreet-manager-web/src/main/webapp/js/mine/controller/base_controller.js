@@ -1,5 +1,6 @@
 // 基础控制
 app.controller('baseController', function($scope){
+
     // 初始化条件查询参数对象
     $scope.search = {};
 
@@ -20,6 +21,8 @@ app.controller('baseController', function($scope){
             $scope.reloadList();
         }
     };
+
+    /*********************批量选择****************************/
 
     // 选择所有
     $scope.selectAll = function (event, cbname) {
@@ -53,4 +56,37 @@ app.controller('baseController', function($scope){
             }
         }
     };
+
+
+    /************************属性相关*************************/
+    // 初始化
+    $scope.initOptions = function () {
+        $scope.options = [{}];
+    }
+
+    // 新增规格行
+    $scope.addRow = function () {
+        $scope.options.push({});
+    }
+
+    // 删除规格行
+    $scope.dropRow = function (index) {
+        if($scope.options.length > 1){
+            $scope.options.splice(index, 1);
+        }
+    }
+
+    /******************将JSON内容拼接为字符串**************/
+    $scope.jsonToString = function(jsonstr, key){
+        var json=JSON.parse(jsonstr);
+        var value="";
+        for(var i=0;i<json.length;i++){
+            if(i>0){
+                value+="-"
+            }
+            value+=json[i][key];
+        }
+        return value;
+    }
+
 });

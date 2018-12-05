@@ -1,5 +1,6 @@
 package com.gene.joystreet.specification.service.impl;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -132,6 +133,27 @@ public class SpecificationServiceImpl implements ISpecificationService{
 		base.put("error", false);
 		base.put("message", SystemMessageConstant.OPERATION_SUCCESS);
 		base.put("data", specification);
+		return base;
+	}
+
+	@Override
+	public Map<String, Object> queryAll() {
+		Map<String, Object> base = new HashMap<>();
+		// 前端需求进行封装
+		List<Specification> specifications = specificationMapper.selectByExample(new SpecificationExample());
+		// 封装为LIST
+		List<Map<String, Object>> rows = new ArrayList<>();
+		for (Specification spec : specifications) {
+			Map<String, Object> map = new HashMap<>();
+			// ID
+			map.put("id", spec.getId());
+			// NAME
+			map.put("text", spec.getSpecName());
+			rows.add(map);
+		}
+		base.put("error", false);
+		base.put("message", SystemMessageConstant.OPERATION_SUCCESS);
+		base.put("data", rows);
 		return base;
 	}
 	
