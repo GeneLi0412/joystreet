@@ -11,13 +11,17 @@
 	<http pattern="/login.html" security="none"></http>
 	<http pattern="/css/**" security="none"></http>
 	<http pattern="/img/**" security="none"></http>
+	<http pattern="/js/**" security="none"></http>
 	<http pattern="/plugins/**" security="none"></http>
 	
 	<!-- 配置拦截规则 -->
     <http auto-config="true" use-expressions="false">
         <intercept-url pattern="/**" access="ROLE_USER" />
-        <form-login login-page="/login.html" authentication-success-forward-url="/admin/index.html"
-        	authentication-failure-forward-url="/login.html" always-use-default-target="true"/>
+        <form-login login-page="/login.html" authentication-success-forward-url="/index.html"/>
+        <logout/>
+        <headers>
+			<frame-options policy="SAMEORIGIN"/>
+		</headers>
         <csrf disabled="true"/>
     </http>
 
@@ -25,6 +29,7 @@
         <authentication-provider>
             <user-service>
                 <user name="admin" password="123456" authorities="ROLE_USER"/>
+                <user name="feify" password="123456" authorities="ROLE_USER"/>
             </user-service>
         </authentication-provider>
     </authentication-manager>

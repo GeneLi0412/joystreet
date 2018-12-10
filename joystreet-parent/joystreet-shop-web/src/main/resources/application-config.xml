@@ -8,6 +8,9 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 		
+	<!-- 引入Spring Security配置文件 -->
+	<import resource="classpath:spring-security.xml"/>
+	
 	<!-- 配置文件 -->	
 	<context:property-placeholder location="classpath:/config/config.properties" />
 	
@@ -17,9 +20,9 @@
 	<!-- 使用zookeeper作为注册中心 -->
     <dubbo:registry protocol="zookeeper" address="${zookeeper.address}"/>
     
-    <!-- 服务列表 -->
+<!--     服务列表
 	<dubbo:reference id="userServiceImpl"
 	    interface="com.feify.service.IUserSerivce"
-		timeout="${zookeeper.timeout}" version="${zookeeper.version}" />
+		timeout="${zookeeper.timeout}" version="${zookeeper.version}" /> -->
     
 </beans>
