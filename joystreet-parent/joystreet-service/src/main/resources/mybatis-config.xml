@@ -21,5 +21,7 @@
 		<mapper resource="com/gene/joystreet/mapper/SpecificationoptionMapper.xml"/>
 		<!-- 商品模板 -->
 		<mapper resource="com/gene/joystreet/mapper/TypetemplateMapper.xml"/>
+		<!-- 商家 -->
+		<mapper resource="com/gene/joystreet/mapper/SellerMapper.xml"></mapper>
 	</mappers>
 </configuration>

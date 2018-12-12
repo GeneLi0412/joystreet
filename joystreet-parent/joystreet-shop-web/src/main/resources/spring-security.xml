@@ -12,6 +12,7 @@
 	<http pattern="/register.html" security="none"></http>
 	<http pattern="/sampling.html" security="none"></http>
 	<http pattern="/cooperation.html" security="none"></http>
+	<http pattern="/seller/register" security="none"></http>
 	<http pattern="/css/**" security="none"></http>
 	<http pattern="/img/**" security="none"></http>
 	<http pattern="/js/**" security="none"></http>
