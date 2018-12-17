@@ -40,4 +40,8 @@
 	<!-- 模板服务 -->
 	<dubbo:reference id="templateService" interface="com.gene.joystreet.template.service.ITemplateService"
 		timeout="${zookeeper.timeout}" version="${zookeeper.version}" />
+  
+	<!-- 商家服务 -->
+	<dubbo:reference id="sellerService" interface="com.gene.joystreet.seller.service.ISellerService"
+		timeout="${zookeeper.timeout}" version="${zookeeper.version}" />
 </beans>

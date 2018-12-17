@@ -25,7 +25,7 @@ app.controller("registerController", function ($scope, $http, $controller) {
             if(resp.error){
                 alert(resp.message);
             }else{
-
+                window.location.href = getRootPath()+"/shoplogin.html";
             }
         })
     }

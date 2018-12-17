@@ -18,4 +18,14 @@ public interface ISellerService {
 	 */
 	public Map<String, Object> addSeller(Seller seller);
 
+	/**
+	 * 分页查询商家信息
+	 * @param page
+	 * @param rows
+	 * @param companyName
+	 * @param shopName
+	 * @return
+	 */
+	public Map<String, Object> queryByPage(Integer page, Integer rows, String companyName, String shopName);
+
 }

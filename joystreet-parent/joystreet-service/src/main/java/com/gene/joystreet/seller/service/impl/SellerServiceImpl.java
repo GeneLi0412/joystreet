@@ -1,6 +1,7 @@
 package com.gene.joystreet.seller.service.impl;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +9,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.alibaba.dubbo.common.utils.StringUtils;
 import com.gene.joystreet.dao.SellerMapper;
 import com.gene.joystreet.entity.Seller;
+import com.gene.joystreet.entity.SellerExample;
 import com.gene.joystreet.seller.service.ISellerService;
+import com.gene.joystreet.util.PageResult;
 import com.gene.joystreet.util.ReturnMap;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 
 @Service
 @Transactional
@@ -37,5 +43,26 @@ public class SellerServiceImpl implements ISellerService{
 		seller.setStatus("1");
 		sellerMapper.insertSelective(seller);
 		return ReturnMap.success();
+	}
+
+	@Override
+	public Map<String, Object> queryByPage(Integer page, Integer rows, String companyName, String shopName) {
+		Map<String, Object> base = new HashMap<>();
+		// 分页
+		PageHelper.startPage(page, rows);
+		// 高级查询
+		SellerExample sellerExample = new SellerExample();
+		// 公司名
+		if(!StringUtils.isBlank(companyName)) {
+			sellerExample.or().andNameLike("%"+ companyName +"%");
+		}
+		// 商店名字
+		if(!StringUtils.isBlank(shopName)) {
+			sellerExample.or().andNickNameLike("%"+ shopName +"%");
+		}
+		Page<Seller> resPage = (Page<Seller>) sellerMapper.selectByExample(sellerExample);
+		// 封装
+		PageResult<Seller> sellerPage = new PageResult<>(resPage.getTotal(), resPage.getResult());
+		return ReturnMap.success(sellerPage);
 	}
 }
