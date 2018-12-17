@@ -47,7 +47,6 @@ public class SellerServiceImpl implements ISellerService{
 
 	@Override
 	public Map<String, Object> queryByPage(Integer page, Integer rows, String companyName, String shopName) {
-		Map<String, Object> base = new HashMap<>();
 		// 分页
 		PageHelper.startPage(page, rows);
 		// 高级查询
