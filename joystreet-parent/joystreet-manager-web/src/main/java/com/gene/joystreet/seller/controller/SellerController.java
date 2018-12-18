@@ -25,6 +25,25 @@ public class SellerController {
 	private ISellerService sellerService;
 	
 	/**
+	 * 更新商家申请状态
+	 * @param sellerId
+	 * @param status
+	 * @return
+	 */
+	@RequestMapping("updateSellerStatus")
+	@ResponseBody
+	public Map<String, Object> updateSellerStatus(String sellerId, String status){
+		Map<String, Object> base = new HashMap<>();
+		try {
+			base = sellerService.updateSellerStatus(sellerId, status);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ReturnMap.error();
+		}
+		return base;
+	}
+	
+	/**
 	 * 分页查询商家信息
 	 * @param page
 	 * @param rows
@@ -35,10 +54,10 @@ public class SellerController {
 	@RequestMapping("queryByPage")
 	@ResponseBody
 	public Map<String, Object> querySellerPage(@RequestParam(defaultValue="1") Integer page, @RequestParam(defaultValue="10") Integer rows,
-				String companyName, String shopName){
+				String companyName, String shopName, String status){
 		Map<String, Object> base = new HashMap<>();
 		try {
-			base = sellerService.queryByPage(page, rows, companyName, shopName);
+			base = sellerService.queryByPage(page, rows, companyName, shopName, status);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ReturnMap.error();

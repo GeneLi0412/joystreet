@@ -1,7 +1,12 @@
 package com.gene.joystreet.entity;
 
-public class Itemcat {
-    private String id;
+import java.io.Serializable;
+
+public class Itemcat implements Serializable{
+
+	private static final long serialVersionUID = 7398036954673055382L;
+
+	private String id;
 
     private String parentId;
 

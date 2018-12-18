@@ -1,6 +1,7 @@
 
-app.controller("sellerController", function ($scope, $http, $controller) {
-    // 继承base控制
+app.controller("sellerManaController", function ($scope, $http, $controller) {
+
+    // 引入基础控制
     $controller("baseController", {$scope:$scope});
 
     // 分页查询
@@ -13,7 +14,7 @@ app.controller("sellerController", function ($scope, $http, $controller) {
                 rows : rows,
                 companyName : search.companyName,
                 shopName : search.shopName,
-                status : 0
+                status : search.status
             }),
             headers : {
                 "Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8"
@@ -57,4 +58,5 @@ app.controller("sellerController", function ($scope, $http, $controller) {
             }
         });
     }
+    
 });

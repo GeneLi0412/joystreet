@@ -26,6 +26,21 @@ public interface ISellerService {
 	 * @param shopName
 	 * @return
 	 */
-	public Map<String, Object> queryByPage(Integer page, Integer rows, String companyName, String shopName);
+	public Map<String, Object> queryByPage(Integer page, Integer rows, String companyName, String shopName, String status);
+
+	/**
+	 * 更新商家状态
+	 * @param sellerId
+	 * @param status
+	 * @return
+	 */
+	public Map<String, Object> updateSellerStatus(String sellerId, String status);
+
+	/**
+	 * 根据登录名查找用户
+	 * @param username
+	 * @return
+	 */
+	public Seller querySeller(String username);
 
 }

@@ -1,7 +1,6 @@
 package com.gene.joystreet.seller.service.impl;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,13 +39,13 @@ public class SellerServiceImpl implements ISellerService{
 		// 创建时间
 		seller.setCreateTime(new Date());
 		// 状态
-		seller.setStatus("1");
+		seller.setStatus("0");
 		sellerMapper.insertSelective(seller);
 		return ReturnMap.success();
 	}
 
 	@Override
-	public Map<String, Object> queryByPage(Integer page, Integer rows, String companyName, String shopName) {
+	public Map<String, Object> queryByPage(Integer page, Integer rows, String companyName, String shopName, String status) {
 		// 分页
 		PageHelper.startPage(page, rows);
 		// 高级查询
@@ -59,9 +58,31 @@ public class SellerServiceImpl implements ISellerService{
 		if(!StringUtils.isBlank(shopName)) {
 			sellerExample.or().andNickNameLike("%"+ shopName +"%");
 		}
+		// 状态
+		if(!StringUtils.isBlank(status)) {
+			sellerExample.or().andStatusEqualTo(status);
+		}
 		Page<Seller> resPage = (Page<Seller>) sellerMapper.selectByExample(sellerExample);
 		// 封装
 		PageResult<Seller> sellerPage = new PageResult<>(resPage.getTotal(), resPage.getResult());
 		return ReturnMap.success(sellerPage);
+	}
+
+	@Override
+	public Map<String, Object> updateSellerStatus(String sellerId, String status) {
+		// 封装商家实体
+		Seller seller = new Seller();
+		// id
+		seller.setSellerId(sellerId);
+		// 状态码
+		seller.setStatus(status);
+		sellerMapper.updateByPrimaryKeySelective(seller);
+		return ReturnMap.success();
+	}
+
+	@Override
+	public Seller querySeller(String username) {
+		Seller seller = sellerMapper.selectByPrimaryKey(username);
+		return seller;
 	}
 }
