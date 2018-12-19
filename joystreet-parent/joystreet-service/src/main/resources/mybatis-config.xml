@@ -25,5 +25,9 @@
 		<mapper resource="com/gene/joystreet/mapper/SellerMapper.xml"/>
 		<!-- 商品分类 -->
 		<mapper resource="com/gene/joystreet/mapper/ItemcatMapper.xml"/>
+		<!-- 商品 -->
+		<mapper resource="com/gene/joystreet/mapper/GoodsMapper.xml"/>
+		<!-- 商品详情 -->
+		<mapper resource="com/gene/joystreet/mapper/GoodsdescMapper.xml"/>
 	</mappers>
 </configuration>

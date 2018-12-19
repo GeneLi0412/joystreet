@@ -20,9 +20,14 @@
 	<!-- 使用zookeeper作为注册中心 -->
     <dubbo:registry protocol="zookeeper" address="${zookeeper.address}"/>
     
-	<!-- 服务列表 -->
+	<!-- 商家 -->
 	<dubbo:reference id="sellerService"
 	    interface="com.gene.joystreet.seller.service.ISellerService"
+		timeout="${zookeeper.timeout}" version="${zookeeper.version}" />
+		
+	<!-- 商品 -->
+	<dubbo:reference id="goodsService"
+	    interface="com.gene.joystreet.goods.service.IGoodsService"
 		timeout="${zookeeper.timeout}" version="${zookeeper.version}" />
     
 </beans>

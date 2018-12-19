@@ -56,4 +56,11 @@
             ref="itemCatServiceImpl" timeout="${zookeeper.timeout}"
             version="${zookeeper.version}"></dubbo:service>
     <!-- 商品分类服务  --> 
+    
+    <!-- 商品服务  -->
+    <dubbo:service
+            interface="com.gene.joystreet.goods.service.IGoodsService"
+            ref="goodsServiceImpl" timeout="${zookeeper.timeout}"
+            version="${zookeeper.version}"></dubbo:service>
+    <!-- 商品服务  --> 
 </beans>

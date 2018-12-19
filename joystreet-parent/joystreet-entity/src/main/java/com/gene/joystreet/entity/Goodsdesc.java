@@ -1,7 +1,12 @@
 package com.gene.joystreet.entity;
 
-public class Goodsdesc {
-    private String goodsId;
+import java.io.Serializable;
+
+public class Goodsdesc implements Serializable{
+
+	private static final long serialVersionUID = -8449161275882353746L;
+
+	private String goodsId;
 
     private String introduction;
 

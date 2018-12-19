@@ -21,13 +21,10 @@
 	<script charset="utf-8" src="../plugins/kindeditor/kindeditor-min.js"></script>
 	<script charset="utf-8" src="../plugins/kindeditor/lang/zh_CN.js"></script>
     
-    
-      
-    
-    
+    <script src="../plugins/angularjs/angular.min.js"></script>
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" >
+<body class="hold-transition skin-red sidebar-mini" ng-app="joystreet" ng-controller="goodsController">
 
             <!-- 正文区域 -->
             <section class="content">
@@ -38,7 +35,7 @@
                     <div class="nav-tabs-custom">
 
                         <!--tab头-->
-                        <ul class="nav nav-tabs">                       		
+                        <ul class="nav nav-tabs">
                             <li class="active">
                                 <a href="#home" data-toggle="tab">商品基本信息</a>                                                        
                             </li>   
@@ -66,8 +63,7 @@
 		                           	  	<table>
 		                           	  		<tr>
 		                           	  			<td>
-		                           	  				<select class="form-control" >														
-		                           	  				</select>
+		                           	  				<select class="form-control" ></select>
 		                              			</td>
 		                              			<td>
 		                           	  				<select class="form-control select-sm" ></select>
@@ -336,13 +332,10 @@
 						<!--表单内容/-->
 							 
                     </div>
-                 	
-                 	
-                 	
-                 	
+
                    </div>
                   <div class="btn-toolbar list-toolbar">
-				      <button class="btn btn-primary" ><i class="fa fa-save"></i>保存</button>
+				      <button class="btn btn-primary" ng-click="saveGoods();"><i class="fa fa-save"></i>保存</button>
 				      <button class="btn btn-default" >返回列表</button>
 				  </div>
 			
@@ -392,9 +385,7 @@
 	  </div>
 	</div>
 </div>
-
-            
-            <!-- 正文区域 /-->
+<!-- 正文区域 /-->
 <script type="text/javascript">
 
 	var editor;
@@ -405,7 +396,10 @@
 	});
 
 </script>
-       
+
+<script src="../js/mine/base.js"></script>
+<script src="../js/mine/controller/base_controller.js"></script>
+<script src="../js/mine/controller/goods_controller.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,13 @@
 package com.gene.joystreet.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Goods {
-    private String id;
+public class Goods implements Serializable{
+
+	private static final long serialVersionUID = -2589055496032077604L;
+
+	private String id;
 
     private String sellerId;
 
